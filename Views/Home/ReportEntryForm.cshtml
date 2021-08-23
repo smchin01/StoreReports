@@ -1,0 +1,127 @@
+﻿@model ReportEntryModel
+@{
+    ViewData["Title"] = "Report Entry";
+}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Buttons StyleSheet-->
+    <link rel="stylesheet" href="Buttons.css">
+
+    <title>Student Entry Form </title>
+</head>
+
+<body>
+    <div id="body-content">
+        <div id="student-entry">
+            <form asp-action="ReportEntryForm">
+                <br />
+                <h1>Daily Report</h1>
+                <hr />
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Date</label>
+                    <div class="col-sm-9">
+                        <input asp-for=@Model.ReportData.Date type="date" class="form-control" value="2020-01-01">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Taxable</label>
+                    <div class="col-sm-9">
+                        <input asp-for=@Model.ReportData.Taxable type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">NonTax</label>
+                    <div class="col-sm-9">
+                        <input asp-for=@Model.ReportData.NonTax type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Gas</label>
+                    <div class="col-sm-9">
+                        <input asp-for=@Model.ReportData.Gas type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Online Lotto</label>
+                    <div class="col-sm-9">
+                        <input asp-for=@Model.ReportData.OnlineLotto type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Instant Lotto</label>
+                    <div class="col-sm-9">
+                        <input asp-for=@Model.ReportData.InstantLotto type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Lottery Paid Outs</label>
+                    <div class="col-sm-9">
+                        <input asp-for=@Model.ReportData.PaidOutsLotto type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Paid Outs</label>
+                    <div class="col-sm-9">
+                        <input asp-for=@Model.ReportData.PaidOuts type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Credit Card</label>
+                    <div class="col-sm-9">
+                        <input asp-for=@Model.ReportData.CreditCard type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Checks</label>
+                    <div class="col-sm-9">
+                        <input asp-for=@Model.ReportData.Checks type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Cash</label>
+                    <div class="col-sm-9">
+                        <input asp-for=@Model.ReportData.Cash type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">State Tax</label>
+                    <div class="col-sm-9">
+                        <input asp-for=@Model.ReportData.StateTax type="text" class="form-control">
+                    </div>
+                </div>
+               
+                <button type="submit" style="background-color: darkblue; height:50px; width: 150px; border-radius: 12px; border-style: solid; border-color: white; color: white;" class="button1">Submit Form</button>
+                <button id="bclear" type="reset" style="background-color: lightgray; height:50px; width: 150px; border-radius: 12px; border-style: solid; border-color: white; color: black;" class="button1">Clear</button>
+            </form>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme.css">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

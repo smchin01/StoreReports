@@ -1,0 +1,96 @@
+﻿@model List<TotalSearchModel>
+@{
+    ViewData["Title"] = "Get Totals";
+}
+
+<h1>Total Search Form</h1>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Totals Search</title>
+</head>
+<body>
+    <div id="body-content">
+        <div id="search-student">
+            <form asp-action="SubmitSearchDate">
+                <div class="row">
+                    <div class="form-group col">
+                        <label for=" "DATE1" class="col-sm-3 col-form-label">Start Date</label>
+                        <input type="date" name="date1" class="form-control" value="2020-01-01">
+                    </div>
+                    <div class="form-group col">
+                        <label></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label for=" " DATE2" class="col-sm-3 col-form-label">End Date</label>
+                        <input type="date" name="date2" class="form-control" value="2020-01-01">
+                    </div>
+                    <div class="form-group col">
+                        <label></label>
+                        <button asp-action="SubmitTotalDates" type="submit" style="background-color: #1f4287" class="btn secondary text-light btn-block">
+                            <i class="fa fa-search"></i> Search
+                        </button>
+                    </div>
+                </div>
+                <table class="table table-striped table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Taxable</th>
+                            <th>Non Tax</th>
+                            <th>Gas</th>
+                            <th>Online Lotto</th>
+                            <th>Instant Lotto</th>
+                            <th>Paid Out Lotto</th>
+                            <th>Paid Outs</th>
+                            <th>Credit Card</th>
+                            <th>Checks</th>
+                            <th>Cash</th>
+                            <th>State Tax</th>
+                            <th>Total Sales</th>
+                            <th>Total Bills</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.ReportDatum.Date.GetValueOrDefault().ToString("yyyy-MM-dd")</td>
+                                <td>@item.TotalSale.Date.Date.ToString("yyyy-MM-dd")</td>
+                                <td>@item.ReportDatum.Taxable</td>
+                                <td>@item.ReportDatum.NonTax</td>
+                                <td>@item.ReportDatum.Gas</td>
+                                <td>@item.ReportDatum.OnlineLotto</td>
+                                <td>@item.ReportDatum.InstantLotto</td>
+                                <td>@item.ReportDatum.PaidOutsLotto</td>
+                                <td>@item.ReportDatum.PaidOuts</td>
+                                <td>@item.ReportDatum.CreditCard</td>
+                                <td>@item.ReportDatum.Checks</td>
+                                <td>@item.ReportDatum.Cash</td>
+                                <td>@item.ReportDatum.StateTax</td>
+                                <td>@item.TotalSale.TotalAmount</td>
+                                <td>@item.Bill.Amount</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
